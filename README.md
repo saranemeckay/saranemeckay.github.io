@@ -78,6 +78,18 @@
             color: var(--rutgers-red);
         }
 
+        .nav-resume-btn {
+            background-color: var(--rutgers-red);
+            color: #ffffff !important;
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        .nav-resume-btn:hover {
+            background-color: var(--rutgers-red-hover);
+        }
+
         /* Main Container */
         .container {
             max-width: 1000px;
@@ -136,6 +148,50 @@
             padding: 1.5rem 1.8rem;
             border-radius: 0 8px 8px 0;
             margin: 0;
+        }
+
+        /* Resume Section Card */
+        .resume-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.8rem;
+            border-radius: 10px;
+            gap: 1.5rem;
+        }
+
+        .resume-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+        }
+
+        .resume-info p {
+            margin: 0;
+            color: #4A5568;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--rutgers-red);
+            color: #ffffff;
+            padding: 0.75rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--rutgers-red-hover);
+            transform: translateY(-1px);
         }
 
         /* Skills Section */
@@ -281,7 +337,7 @@
                 padding: 1rem;
             }
             nav a {
-                margin: 0 0.6rem;
+                margin: 0 0.4rem;
             }
             section {
                 padding: 1.5rem;
@@ -289,6 +345,10 @@
             .personal-statement {
                 font-size: 1.05rem;
                 padding: 1.2rem;
+            }
+            .resume-card {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -301,8 +361,10 @@
             <a href="#" class="logo">Sara Rose Nemeckay <span>| RBS Marketing</span></a>
             <nav>
                 <a href="#about">About</a>
+                <a href="#resume">Resume</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="nav-resume-btn">View PDF</a>
             </nav>
         </div>
     </header>
@@ -316,6 +378,20 @@
             <p class="personal-statement">
                 While studying marketing at Rutgers Business School, I am also a full-time makeup and special effects artist for TV and Film, looking forward to seamlessly combining the world of business with my world of creativity.
             </p>
+        </section>
+
+        <!-- Dedicated Resume Section -->
+        <section id="resume">
+            <h2>Professional Resume</h2>
+            <div class="resume-card">
+                <div class="resume-info">
+                    <h3>Sara Rose Nemeckay — Official Resume</h3>
+                    <p>Includes educational history (Rutgers & Middlesex), management experience, TV/Film FX makeup credits, and technical certifications.</p>
+                </div>
+                <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="btn-primary">
+                    📄 Open Resume PDF &rarr;
+                </a>
+            </div>
         </section>
 
         <!-- Skills Showcase Section -->
@@ -366,7 +442,7 @@
                             Managed store operations at Dunellen Bagel, supervising staff, executing standard opening/closing protocols, and auditing weekly inventory based on historical sales trends and demand forecasting.
                         </p>
                     </div>
-                    <a href="https://github.com" target="_blank" class="project-link">View Operations Summary &rarr;</a>
+                    <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="project-link">View Resume Details &rarr;</a>
                 </div>
 
                 <!-- Project 2 -->
@@ -378,7 +454,7 @@
                             Trained retail associates on weekly planogram store resets at Ulta Beauty, tracked inventory discrepancies for loss prevention, and executed promotional in-store event launches to drive brand engagement.
                         </p>
                     </div>
-                    <a href="https://github.com" target="_blank" class="project-link">View Retail Strategy &rarr;</a>
+                    <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="project-link">View Resume Details &rarr;</a>
                 </div>
 
                 <!-- Project 3 -->
@@ -390,7 +466,7 @@
                             Served as Key Makeup Artist for "The Translator" (premiered at Warner Bros. Studios via New York Film Academy), directing SFX character makeup continuity, blood rigs, and specialized wartime makeup design.
                         </p>
                     </div>
-                    <a href="https://github.com" target="_blank" class="project-link">View Production Work &rarr;</a>
+                    <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="project-link">View Resume Details &rarr;</a>
                 </div>
 
             </div>
