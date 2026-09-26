@@ -1,33 +1,46 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sara Rose Nemeckay | Marketing Portfolio</title>
+    <title>Sara Rose Nemeckay | Marketing & SFX Portfolio</title>
     <style>
-        /* Rutgers Scarlet Brand Colors */
+        /* Rutgers Scarlet & Modern Color Palette */
         :root {
             --rutgers-red: #CC0033;
-            --dark-gray: #222222;
-            --light-bg: #F8F9FA;
-            --border-color: #E0E0E0;
+            --rutgers-red-hover: #A00028;
+            --dark-gray: #1E2022;
+            --medium-gray: #4A4A4A;
+            --light-bg: #F4F6F8;
+            --card-bg: #FFFFFF;
+            --border-color: #E2E8F0;
+            --accent-glow: rgba(204, 0, 51, 0.08);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--light-bg);
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation Bar */
+        /* Navigation Header */
         header {
             background-color: #ffffff;
             border-bottom: 3px solid var(--rutgers-red);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: var(--shadow-sm);
         }
 
         .nav-container {
@@ -36,22 +49,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.1rem 2rem;
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.25rem;
+            font-weight: 800;
             color: var(--rutgers-red);
             text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .logo span {
+            color: var(--dark-gray);
+            font-weight: 400;
         }
 
         nav a {
-            margin-left: 1.5rem;
+            margin-left: 1.8rem;
             text-decoration: none;
             color: var(--dark-gray);
             font-weight: 600;
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
@@ -61,67 +81,115 @@
         /* Main Container */
         .container {
             max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 2rem;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
         }
 
         section {
-            background: #ffffff;
-            padding: 2rem;
+            background: var(--card-bg);
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s ease;
         }
 
-        h1, h2 {
+        h1 {
+            font-size: 1.8rem;
             color: var(--rutgers-red);
             margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
-        /* Personal Statement Section */
+        h2 {
+            font-size: 1.4rem;
+            color: var(--dark-gray);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: var(--rutgers-red);
+            border-radius: 2px;
+        }
+
+        /* Personal Statement Banner */
         .personal-statement {
             font-size: 1.2rem;
-            font-weight: 500;
-            line-height: 1.8;
-            color: #333333;
-            border-left: 4px solid var(--rutgers-red);
-            padding-left: 1rem;
-            margin: 1rem 0 0 0;
+            font-weight: 400;
+            line-height: 1.85;
+            color: #2D3748;
+            background-color: var(--accent-glow);
+            border-left: 5px solid var(--rutgers-red);
+            padding: 1.5rem 1.8rem;
+            border-radius: 0 8px 8px 0;
+            margin: 0;
         }
 
-        /* Skills Showcase Section */
+        /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
             gap: 1.5rem;
             margin-top: 1rem;
         }
 
         .skill-category {
             background-color: var(--light-bg);
-            padding: 1.2rem;
-            border-radius: 6px;
-            border: 1px solid #EAEAEA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
         .skill-category h3 {
             margin-top: 0;
-            font-size: 1rem;
-            color: var(--dark-gray);
+            font-size: 1.05rem;
+            color: var(--rutgers-red);
             border-bottom: 2px solid var(--rutgers-red);
-            padding-bottom: 0.3rem;
+            padding-bottom: 0.4rem;
             display: inline-block;
+            margin-bottom: 1rem;
         }
 
         .skill-category ul {
             list-style-type: none;
             padding-left: 0;
-            margin-bottom: 0;
+            margin: 0;
         }
 
         .skill-category li {
-            padding: 0.3rem 0;
-            color: #555555;
+            padding: 0.4rem 0;
+            color: #4A5568;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category li::before {
+            content: "•";
+            color: var(--rutgers-red);
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            font-size: 1.2rem;
         }
 
         /* Projects Section */
@@ -134,52 +202,93 @@
 
         .project-card {
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 1.8rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-color: #ffffff;
+            background-color: var(--card-bg);
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .project-card:hover {
+            top: -4px;
+            box-shadow: var(--shadow-md);
+            border-color: #CBD5E0;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-glow);
+            color: var(--rutgers-red);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            width: fit-content;
         }
 
         .project-card h3 {
             margin-top: 0;
+            margin-bottom: 0.8rem;
             color: var(--dark-gray);
+            font-size: 1.15rem;
         }
 
         .project-card p {
-            color: #555555;
+            color: #4A5568;
             font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
         }
 
         .project-link {
-            display: inline-block;
-            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
             color: var(--rutgers-red);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
 
         .project-link:hover {
+            color: var(--rutgers-red-hover);
             text-decoration: underline;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem 0;
-            color: #666666;
+            padding: 2.5rem 0;
+            color: #718096;
             font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+            margin-top: 3rem;
         }
 
-        /* Mobile Responsive Adjustments */
-        @media (max-width: 600px) {
+        /* Responsive Design */
+        @media (max-width: 650px) {
             .nav-container {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.8rem;
+                padding: 1rem;
             }
             nav a {
-                margin: 0 0.5rem;
+                margin: 0 0.6rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+            .personal-statement {
+                font-size: 1.05rem;
+                padding: 1.2rem;
             }
         }
     </style>
@@ -189,7 +298,7 @@
     <!-- Navigation Header -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Sara Rose Nemeckay | RBS Marketing</a>
+            <a href="#" class="logo">Sara Rose Nemeckay <span>| RBS Marketing</span></a>
             <nav>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -200,12 +309,12 @@
 
     <div class="container">
 
-        <!-- Header / Personal Statement Section -->
+        <!-- About / Personal Statement Section -->
         <section id="about">
             <h1>Rutgers Business School Portfolio</h1>
-            <!-- One-Sentence Personal Statement tailored to marketing + creative production/retail management -->
+            <!-- Rubric Requirement: Clear, concise, and professional one-sentence introduction -->
             <p class="personal-statement">
-                I am a Rutgers Business School Marketing major combining hands-on retail management experience, inventory analytics, and creative media production background to drive impactful brand marketing and operational execution.
+                While studying marketing at Rutgers Business School, I am also a full-time makeup and special effects artist for TV and Film, looking forward to seamlessly combining the world of business with my world of creativity.
             </p>
         </section>
 
@@ -217,27 +326,27 @@
                     <h3>Marketing & Management</h3>
                     <ul>
                         <li>Inventory Analytics & Demand Tracking</li>
-                        <li>Retail Merchandise Planning & Planograms</li>
-                        <li>Team Supervision & Employee Training</li>
+                        <li>Retail Merchandise Planning</li>
+                        <li>Team Supervision & Leadership</li>
                         <li>Customer Experience & Event Execution</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Technical & Software Skills</h3>
+                    <h3>Technical & Digital</h3>
                     <ul>
                         <li>HTML Web Development</li>
                         <li>ZBrush Digital Sculpting (Certified)</li>
                         <li>Loss Prevention Analysis</li>
-                        <li>Sanitation & Organization (Certified)</li>
+                        <li>Sanitation & Organization Certified</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Creative & Production</h3>
+                    <h3>Creative & Film Production</h3>
                     <ul>
                         <li>Special Effects (SFX) Makeup & Design</li>
                         <li>Airbrushing (Single & Dual Action)</li>
-                        <li>Character Makeup Continuity & Rigging</li>
-                        <li>Event Internship & Industry Production</li>
+                        <li>Character Continuity & FX Rigging</li>
+                        <li>Event Production & Internship Experience</li>
                     </ul>
                 </div>
             </div>
@@ -251,34 +360,37 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div>
-                        <h3>Retail Operations & Inventory Strategy</h3>
+                        <span class="badge">Business Operations</span>
+                        <h3>Retail Operations & Demand Forecasting</h3>
                         <p>
-                            Managed business operations at Dunellen Bagel, overseeing staff training, opening/closing procedures, and weekly inventory monitoring based on historical sales trends and demand forecasting.
+                            Managed store operations at Dunellen Bagel, supervising staff, executing standard opening/closing protocols, and auditing weekly inventory based on historical sales trends and demand forecasting.
                         </p>
                     </div>
-                    <a href="https://github.com" target="_blank" class="project-link">View Management Details &rarr;</a>
+                    <a href="https://github.com" target="_blank" class="project-link">View Operations Summary &rarr;</a>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div>
-                        <h3>Visual Merchandising & Planograms</h3>
+                        <span class="badge">Merchandising</span>
+                        <h3>Visual Merchandising & Event Execution</h3>
                         <p>
-                            Led store resets and new-hire training at Ulta Beauty, auditing inventory discrepancies for loss prevention and executing promotional in-store event launches to drive brand engagement.
+                            Trained retail associates on weekly planogram store resets at Ulta Beauty, tracked inventory discrepancies for loss prevention, and executed promotional in-store event launches to drive brand engagement.
                         </p>
                     </div>
-                    <a href="https://github.com" target="_blank" class="project-link">View Retail Operations Overview &rarr;</a>
+                    <a href="https://github.com" target="_blank" class="project-link">View Retail Strategy &rarr;</a>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div>
-                        <h3>Film Production FX & Continuity</h3>
+                        <span class="badge">Film Production</span>
+                        <h3>Film Production FX & Character Continuity</h3>
                         <p>
-                            Served as Key Makeup Artist for "The Translator" (premiered at Warner Bros. Studios via New York Film Academy), directing SFX character makeup continuity and managing specialized FX rigs.
+                            Served as Key Makeup Artist for "The Translator" (premiered at Warner Bros. Studios via New York Film Academy), directing SFX character makeup continuity, blood rigs, and specialized wartime makeup design.
                         </p>
                     </div>
-                    <a href="https://github.com" target="_blank" class="project-link">View Production Details &rarr;</a>
+                    <a href="https://github.com" target="_blank" class="project-link">View Production Work &rarr;</a>
                 </div>
 
             </div>
@@ -288,7 +400,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Sara Rose Nemeckay | Rutgers Business School, Major in Marketing</p>
+        <p>&copy; 2026 Sara Rose Nemeckay | Rutgers Business School & Film Industry Portfolio</p>
     </footer>
 
 </body>
