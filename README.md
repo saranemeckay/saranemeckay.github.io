@@ -373,9 +373,10 @@
 <body>
 
     <!-- Navigation Header -->
-   <header>
+ <header>
         <div class="nav-container">
-            <nav style="margin: 0 auto;">
+            <a href="#" class="logo">Sara Rose Nemeckay <span>| RBS Marketing</span></a>
+            <nav>
                 <a href="#about">About</a>
                 <a href="#resumes">Resumes</a>
                 <a href="#skills">Skills</a>
