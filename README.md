@@ -65,8 +65,13 @@
             font-weight: 400;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
         nav a {
-            margin-left: 1.8rem;
             text-decoration: none;
             color: var(--dark-gray);
             font-weight: 600;
@@ -81,8 +86,9 @@
         .nav-resume-btn {
             background-color: var(--rutgers-red);
             color: #ffffff !important;
-            padding: 0.4rem 0.9rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 6px;
+            font-size: 0.85rem;
             transition: background-color 0.2s ease;
         }
 
@@ -150,48 +156,63 @@
             margin: 0;
         }
 
-        /* Resume Section Card */
+        /* Dual Resume Cards Layout */
+        .resumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
         .resume-card {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
             background-color: var(--light-bg);
             border: 1px solid var(--border-color);
             padding: 1.8rem;
             border-radius: 10px;
-            gap: 1.5rem;
         }
 
         .resume-info h3 {
             margin: 0 0 0.5rem 0;
             color: var(--dark-gray);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
         .resume-info p {
-            margin: 0;
+            margin: 0 0 1.2rem 0;
             color: #4A5568;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             background-color: var(--rutgers-red);
             color: #ffffff;
-            padding: 0.75rem 1.4rem;
+            padding: 0.75rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.95rem;
-            white-space: nowrap;
+            font-size: 0.9rem;
             transition: background-color 0.2s ease, transform 0.2s ease;
             box-shadow: var(--shadow-sm);
+            width: fit-content;
         }
 
         .btn-primary:hover {
             background-color: var(--rutgers-red-hover);
             transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: var(--dark-gray);
+        }
+
+        .btn-secondary:hover {
+            background-color: #000000;
         }
 
         /* Skills Section */
@@ -336,8 +357,9 @@
                 gap: 0.8rem;
                 padding: 1rem;
             }
-            nav a {
-                margin: 0 0.4rem;
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
             }
             section {
                 padding: 1.5rem;
@@ -345,10 +367,6 @@
             .personal-statement {
                 font-size: 1.05rem;
                 padding: 1.2rem;
-            }
-            .resume-card {
-                flex-direction: column;
-                align-items: flex-start;
             }
         }
     </style>
@@ -361,10 +379,11 @@
             <a href="#" class="logo">Sara Rose Nemeckay <span>| RBS Marketing</span></a>
             <nav>
                 <a href="#about">About</a>
-                <a href="#resume">Resume</a>
+                <a href="#resumes">Resumes</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="nav-resume-btn">View PDF</a>
+                <a href="Sara_Rose_Nemeckay_Business_Resume.pdf" target="_blank" class="nav-resume-btn">Business Resume</a>
+                <a href="Sara_Rose_Nemeckay_Film_Resume.pdf" target="_blank" class="nav-resume-btn">TV/Film Resume</a>
             </nav>
         </div>
     </header>
@@ -374,23 +393,38 @@
         <!-- About / Personal Statement Section -->
         <section id="about">
             <h1>Rutgers Business School Portfolio</h1>
-            <!-- Rubric Requirement: Clear, concise, and professional one-sentence introduction -->
             <p class="personal-statement">
                 While studying marketing at Rutgers Business School, I am also a full-time makeup and special effects artist for TV and Film, looking forward to seamlessly combining the world of business with my world of creativity.
             </p>
         </section>
 
-        <!-- Dedicated Resume Section -->
-        <section id="resume">
-            <h2>Professional Resume</h2>
-            <div class="resume-card">
-                <div class="resume-info">
-                    <h3>Sara Rose Nemeckay — Official Resume</h3>
-                    <p>Includes educational history (Rutgers & Middlesex), management experience, TV/Film FX makeup credits, and technical certifications.</p>
+        <!-- Dedicated Dual Resume Section -->
+        <section id="resumes">
+            <h2>Professional Resumes</h2>
+            <div class="resumes-grid">
+                
+                <!-- Business Resume Card -->
+                <div class="resume-card">
+                    <div class="resume-info">
+                        <h3>Business & Marketing Resume</h3>
+                        <p>Focuses on Rutgers marketing degree coursework, retail management, inventory analytics, and administrative skill sets.</p>
+                    </div>
+                    <a href="Sara_Rose_Nemeckay_Business_Resume.pdf" target="_blank" class="btn-primary">
+                        📄 Open Business Resume &rarr;
+                    </a>
                 </div>
-                <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="btn-primary">
-                    📄 Open Resume PDF &rarr;
-                </a>
+
+                <!-- TV/Film Resume Card -->
+                <div class="resume-card">
+                    <div class="resume-info">
+                        <h3>TV & Film SFX Resume</h3>
+                        <p>Highlights feature film credits (<em>Men of Granite</em>, <em>Words From the Oven</em>), music videos, theatrical productions, and SFX shop work at Gotham FX Lab.</p>
+                    </div>
+                    <a href="Sara_Rose_Nemeckay_Film_Resume.pdf" target="_blank" class="btn-primary btn-secondary">
+                        🎬 Open TV/Film Resume &rarr;
+                    </a>
+                </div>
+
             </div>
         </section>
 
@@ -411,7 +445,7 @@
                     <h3>Technical & Digital</h3>
                     <ul>
                         <li>HTML Web Development</li>
-                        <li>ZBrush Digital Sculpting (Certified)</li>
+                        <li>ZBrush & Nomad Sculpting (Certified)</li>
                         <li>Loss Prevention Analysis</li>
                         <li>Sanitation & Organization Certified</li>
                     </ul>
@@ -420,9 +454,9 @@
                     <h3>Creative & Film Production</h3>
                     <ul>
                         <li>Special Effects (SFX) Makeup & Design</li>
-                        <li>Airbrushing (Single & Dual Action)</li>
+                        <li>Single & Dual Action Airbrushing</li>
                         <li>Character Continuity & FX Rigging</li>
-                        <li>Event Production & Internship Experience</li>
+                        <li>Gotham FX Lab & Cinema Makeup Track</li>
                     </ul>
                 </div>
             </div>
@@ -442,7 +476,7 @@
                             Managed store operations at Dunellen Bagel, supervising staff, executing standard opening/closing protocols, and auditing weekly inventory based on historical sales trends and demand forecasting.
                         </p>
                     </div>
-                    <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="project-link">View Resume Details &rarr;</a>
+                    <a href="Sara_Rose_Nemeckay_Business_Resume.pdf" target="_blank" class="project-link">View Business Resume &rarr;</a>
                 </div>
 
                 <!-- Project 2 -->
@@ -454,7 +488,7 @@
                             Trained retail associates on weekly planogram store resets at Ulta Beauty, tracked inventory discrepancies for loss prevention, and executed promotional in-store event launches to drive brand engagement.
                         </p>
                     </div>
-                    <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="project-link">View Resume Details &rarr;</a>
+                    <a href="Sara_Rose_Nemeckay_Business_Resume.pdf" target="_blank" class="project-link">View Business Resume &rarr;</a>
                 </div>
 
                 <!-- Project 3 -->
@@ -463,10 +497,10 @@
                         <span class="badge">Film Production</span>
                         <h3>Film Production FX & Character Continuity</h3>
                         <p>
-                            Served as Key Makeup Artist for "The Translator" (premiered at Warner Bros. Studios via New York Film Academy), directing SFX character makeup continuity, blood rigs, and specialized wartime makeup design.
+                            Key Makeup Artist and SFX Artist on feature films (<em>Men of Granite</em>, <em>Mercury 1938</em>, <em>The Translator</em>) managing character continuity, blood rigs, and prosthetic applications.
                         </p>
                     </div>
-                    <a href="Sara_Rose_Nemeckay_Resume.pdf" target="_blank" class="project-link">View Resume Details &rarr;</a>
+                    <a href="Sara_Rose_Nemeckay_Film_Resume.pdf" target="_blank" class="project-link">View TV/Film Resume &rarr;</a>
                 </div>
 
             </div>
